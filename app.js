@@ -14,7 +14,7 @@ const KEY = "15674931-a9d714b6e9d654524df198e00&q";
 
 // Search box dynamic when clicked enter key
 var input = document.getElementById("search");
-input.addEventListener("keyup", function(event) {
+input.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
     // event.preventDefault();
     document.getElementById("search-btn").click();
@@ -65,6 +65,7 @@ const createSlider = () => {
     alert("Select at least 2 image.");
     return;
   }
+
   // crate slider previous next area
   sliderContainer.innerHTML = "";
   const prevNext = document.createElement("div");
@@ -79,7 +80,8 @@ const createSlider = () => {
   document.querySelector(".main").style.display = "block";
   // hide image aria
   imagesArea.style.display = "none";
-  const duration = document.getElementById('duration').value || 1000;
+  const duration = document.getElementById("duration").value && 3000;
+
   sliders.forEach((slide) => {
     let item = document.createElement("div");
     item.className = "slider-item";
@@ -134,11 +136,9 @@ sliderBtn.addEventListener("click", function () {
 
 const toggleSpinner = (show) => {
   const spinner = document.getElementById("loading-spinner");
-  if(show){
+  if (show) {
     spinner.classList.remove("d-none");
-  }
-  else{
+  } else {
     spinner.classList.add("d-none");
   }
-}
-
+};
